@@ -1,0 +1,848 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+
+	<link href="/style-guide/css/fluig-style-guide-ratingstars.min.css" rel="stylesheet" type="text/css">
+	<script src="/style-guide/js/fluig-style-guide-ratingstars.min.js"></script>
+
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+	<!--JavaScript at end of body for optimized loading-->
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+
+	<script type="text/javascript" src="/portal/resources/style-guide/js/fluig-style-guide-richeditor.min.js"></script>
+
+
+	<script type="text/javascript" src="/webdesk/vcXMLRPC.js"></script>
+	<script type="text/javascript" src="painel.js"></script>
+	<script type="text/javascript" src="Custom.js"></script>
+	<script type="text/javascript" src="slc_dts.js"></script>
+	<script type="text/javascript" src="slc_dotacao.js"></script>
+	<!-- <script type="text/javascript" src="projeto.js"></script>
+	<script type="text/javascript" src="acao.js"></script>
+	<script type="text/javascript" src="unidade.js"></script> -->
+
+	<style>
+		.estrelas input[type=radio] {
+			display: none;
+		}
+
+		.estrelas label i.fa:before {
+			content: '\f005';
+			color: rgb(206, 165, 1);
+		}
+
+		.estrelas input[type=radio]:checked~label i.fa:before {
+			color: #CCC;
+		}
+
+		.Obrigatorio {
+			color: lightcoral;
+		}
+	</style>
+
+
+</head>
+
+<body class="fluig-style-guide">
+	<form name="form" role="form">
+		<div class="panel panel-info" id="SolicitacaoAJUR">
+			<div class="panel-heading">
+				<h1><i class="flaticon flaticon-juridical icon-thumbnail-xs"></i> Solicitação Serviços UAJUR</h1>
+			</div>
+		</div>
+
+		<input type="hidden" name="hd_numSuperior" id="numSuperior">
+		<input type="hidden" name="hdn_lastState" id="hdn_lastState">
+		<input type="hidden" name="hdn_State" id="hdn_State">
+		<input type="hidden" name="hdn_diretoria" id="hdn_diretoria">
+
+		<input type="hidden" name="arrUnidade" id="arrUnidade">
+
+		<div class="panel panel-info" id="Avaliar">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="flaticon flaticon-person-star icon-lg" aria-hidden="true"></i></i>
+					Avaliação de Serviço</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group row">
+					<div class="col-md-5">
+						<label for="avalia">Nivel de Satisfação com o Serviço: <span
+								class="Obrigatorio"><strong>*</strong></span></label>
+						<div class="rating-numbers1"></div>
+						<input type="hidden" name="rating_numbers1" id="rating_numbers1">
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-4">
+						<label for="comentario">Comentário:</label>
+						<textarea rows="2" name="comentario" id="comentario" class="form-control"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panel-info" id="DadoSolicitante">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="flaticon flaticon-account-circle icon-lg"></i> Dados do Solicitante
+				</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group row">
+					<div class="col-md-3">
+						<label for="cmb_NomeSolicitante">Nome Solicitante</label>
+						<select name="cmb_NomeSolicitante" id="cmb_NomeSolicitante" dataset="colleague"
+							datasetkey="colleagueId" datasetvalue="colleagueName" class="form-control" readonly>
+						</select>
+					</div>
+					<div class="col-md-2">
+						<label for="dt_DataSolicit">Data e Hora</label>
+						<input type="text" class="form-control" name="dt_DataSolicit" id="dt_DataSolicit">
+					</div>
+					<div class="col-md-2">
+						<label for="txt_NumProc">Numero da Solicitação</label>
+						<input type="text" class="form-control" name="txt_NumProc" id="txt_NumProc">
+
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-3">
+						<label for="cmb_GerenteSolicitante">Gerente / Diretor</label>
+						<input type="text" class="form-control" name="cmb_GerenteSolicitante"
+							id="cmb_GerenteSolicitante" readonly>
+
+					</div>
+					<div class="col-md-4">
+						<label for="zm_UnidadeSolicitante">Unidade Solicitante</label>
+						<input type="text" class="form-control" name="cmb_UnidadeSolicitante"
+							id="cmb_UnidadeSolicitante" readonly>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="fluigicon fluigicon-files icon-lg"></i> Tipo de Serviço</h3>
+			</div>
+			<div class="panel-body">
+				<div class="col-md-8">
+					<div class="panel panel-info">
+						<div class="panel-body">
+							<div class="form-group row">
+								<div class="col-md-3">
+									<label for="tp_solicitacao">Tipo de Solicitação: <span
+											class="Obrigatorio"><strong>*</strong></span></label>
+									<select name="tp_solicitacao" id="tp_solicitacao" class="form-control">
+										<option value="0" selected>Selecione</option>
+										<option value="Aditivo de Contrato">Aditivo de Contrato</option>
+										<option id="porta" value="Portaria">Portaria</option>
+										<option id="resol" value="Resolução">Resolução</option>
+										<option value="Atestado de Capacidade Técnica">Atestado de Capacidade Técnica
+										</option>
+										<option value="Parecer Jurídico">Parecer Jurídico</option>
+										<option value="Outros">Outros</option>
+									</select>
+								</div>
+								<div class="col-md-7" id="divassunto">
+									<label for="assunto">Assunto: <span
+											class="Obrigatorio"><strong>*</strong></span></label>
+									<input type="text" class="form-control" name="assunto" id="assunto">
+								</div>
+								<div class="col-md-7" id="tipo_portaria">
+									<label for="tipo_potaria">Tipo de Portaria<span
+											class="Obrigatorio"><strong>*</strong></span></label>
+									<select class="form-control" name="tipo_potaria" id="tipo_potaria"
+										onchange="tp_portaria()">
+										<option value="0" selected>Selecione</option>
+										<option value="MOVIMENTAÇÃO INTERNA">MOVIMENTAÇÃO INTERNA</option>
+										<option value="SUBSTITUIÇÃO DE GERÊNCIA POR COLABORADOR(A)">SUBSTITUIÇÃO DE
+											GERÊNCIA POR COLABORADOR(A)</option>
+										<option value="DIRETOR(A) RESPONDENDO POR OUTRA DIRETORIA">DIRETOR(A)
+											RESPONDENDO POR OUTRA DIRETORIA</option>
+										<option value="OUTROS">OUTROS</option>
+									</select>
+								</div>
+								<div class="col-md-2" id="num_direx_">
+									<label for="num_direx">NÂ° Resolução Direx <span
+											class="Obrigatorio"><strong>*</strong></span>:</label>
+									<input type="text" class="form-control" name="num_direx" id="num_direx">
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-md-12">
+									<label for="detalhes">Descrição e Justificativa do Ato: <span
+											class="Obrigatorio"><strong>*</strong></span></label>
+									<textarea rows="7" name="detalhes" id="detalhes" class="form-control"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="panel panel-info">
+						<div class="panel-body">
+							<div class="card">
+								<div class="card-body">
+									<h3 class="card-title">
+										<script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+										<lord-icon src="https://cdn.lordicon.com/wdqztrtx.json" trigger="loop"
+											colors="primary:#722F37" style="width: 25px;height:25px;padding-top: 4px;">
+										</lord-icon>
+										Instruções:
+									</h3>
+									<p class="card-text">Será mostrado o passo a passo de cada Solicitação</p>
+									<ul>
+										<div id="ad">
+											<li><strong><u>Aditivo de Contrato</u></strong></li>
+											<ol>
+												<li><strong><a
+															href="https://myweb.am.sebrae.com.br/portal/p/1/ecmnavigation?app_ecm_navigation_doc=230472"
+															target="_blank">Resolução
+															007/2019 -“ Alçada de Contratações</a></strong></li>
+												<li>Informar necessidade da manutenção do contrato através de termo
+													aditivo de prorrogação e reajuste.</li>
+												<li>Informar indicação expressa da cláusula com previsão de reajuste
+													determinado no contrato em questão.</li>
+												<li>Informar indicação expressa do percentual de reajuste e valores
+													(inicialmente acordado e após o ajuste), para a devida anuência da
+													Diretoria.</li>
+												<!-- <li><strong>Anexar CI autorizada pela Diretoria, encaminhada pelo(a)
+														gestor(a) a AJUR para elaboração do respectivo termo aditivo e,
+														ato contínuo, enviará o documento para que o(a) gestor(a) do
+														contrato providencie as devidas assinaturas.</strong></li> -->
+												<li><strong>Utilizar o campo "Descrição e Justificativa do Ato" contendo
+														no pedido, a descrição pormenorizada conforme feito
+														anteriormente na versão C.I..</strong></li>
+												<li><strong>Anexar contrato original e aditivos firmados.</strong></li>
+											</ol>
+										</div>
+										<div id="pt">
+											<li><strong><u>Portaria</u></strong></li>
+											<ul>
+												<li id="dirpdir">&#8900; Fundamento -“ Estatuto, Art.23, Parágrafo Único
+												</li>
+												<li id="gercol">&#8900; Fundamento -“ Estatuto, Art.23, Inciso IV</li>
+												<li id="movein">&#8900; Fundamento -“ Estatuto, Art. 22, Inciso III/ IN
+													28.01</li>
+											</ul>
+											<ol>
+												<li><strong><a
+															href="https://myweb.am.sebrae.com.br/portal/p/1/ecmnavigation?app_ecm_navigation_doc=230473"
+															target="_blank">Resolução
+															017/2020 da Remuneração Acessória</a></strong></li>
+												<li>Informar motivo da Substituição, se Movimentação Interna,
+													Férias, etc. na Descrição e Justificativa do Ato.</li>
+												<!-- <li><strong>Anexar CI da Gerência, autorizada pelas diretorias
+														respectivas: DISUP, DIRAF E DITEC.</strong></li> -->
+												<li><strong>Utilizar o campo "Descrição e Justificativa do Ato" contendo
+														no pedido, a descrição pormenorizada conforme feito
+														anteriormente na versão C.I..</strong></li>
+												<li>Informar se cabe ou não remuneração acessória.</li>
+											</ol>
+										</div>
+										<div id="rs">
+											<li><strong><u>Resolução</u></strong></li>
+											<ol>
+												<li><strong>Encaminhar pauta aprovada em reunião DIREX.</strong></li>
+												<li>Solicitações iniciadas pela <u>Superintendência</u> serão
+													encaminhadas diretamente para AJUR.</li>
+												<li>Solicitações iniciadas pela <u>Diretoria Administrativa
+														Financeira</u> e <u>pela Diretoria Técnica</u> serão
+													encaminhadas para aprovação da <u>Superintendência</u> antes de ir
+													para AJUR.</li>
+											</ol>
+										</div>
+										<div id="act">
+											<li><strong><u>Atestado de Capacidade Técnica</u></strong></li>
+											<ol>
+												<li><strong>Anexar requerimento da empresa interessada.</strong></li>
+												<li><strong>Anexar Declaração/Atesto do gestor do contrato.</strong>
+												</li>
+												<li><strong>Anexar Contrato firmado entre o SEBRAE e a empresa.</strong>
+												</li>
+												<li><strong>Utilizar o campo "Descrição e Justificativa do Ato" contendo
+														no pedido, a descrição pormenorizada conforme feito
+														anteriormente na versão C.I..</strong></li>
+											</ol>
+										</div>
+										<div id="pj">
+											<li><strong><u>Parecer Jurídico</u></strong></li>
+											<ol>
+												<li><strong>Utilizar o campo "Descrição e Justificativa do Ato" contendo
+														no pedido, a descrição pormenorizada conforme feito
+														anteriormente na versão C.I..</strong></li>
+												<li><strong>Anexar documentação acessória que compõe a solicitação.
+														Exemplos: (cartas solicitando reajuste de preço de contrato,
+														aditivos, propostas de fornecedores, etc.)</strong></li>
+											</ol>
+										</div>
+										<div id="ot">
+											<li><strong><u>Outros</u></strong></li>
+											<ol>
+												<li><strong>Utilizar o campo "Descrição e Justificativa do Ato" contendo
+														no pedido, a descrição pormenorizada conforme feito
+														anteriormente na versão C.I..</strong></li>
+												<li><strong>Anexar documentos, evidências, entre outros informes
+														disponíveis que possam tornar claro, fatos e circunstáncias da
+														demanda que se pretenda dirimir dúvidas ou sanar questões de
+														cunho jurídico.</strong></li>
+											</ol>
+										</div>
+										<div id="td">
+											<li>Selecione um Tipo de Solicitação para receber as instruções de
+												preenchimento.</li>
+										</div>
+										<div id="aviso">
+											<hr>
+											<li><strong>Caso o campo "<u>Descrição e Justificativa do Ato</u>" esteja
+													ilegível basta <u>clicar 2 vezes no botão "Código-Fonte"</u> para
+													formatar
+													o texto</strong></li>
+										</div>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panel-info" id="Aditivo">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="flaticon flaticon-invoices icon-lg"></i> Aditivo</h3>
+			</div>
+			<div class="panel-boby">
+
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<tr>
+								<td>
+									<div class="col-md-1">
+										<label for="num_contrato">NÂ° Contrato: <span
+												class="Obrigatorio"><strong>*</strong></span></label>
+										<input type="text" class="form-control" name="num_contrato" id="num_contrato">
+									</div>
+									<div class="col-md-3">
+										<label for="meioContratacao">Meio Contratacao: <span
+												class="Obrigatorio"><strong>*</strong></span></label>
+										<select type="text" class="form-control" name="meioContratacao"
+											id="meioContratacao">
+											<option value="0" selected disabled>Selecione</option>
+											<option value="EDITAIS DE CREDENCIAMENTO">EDITAIS DE CREDENCIAMENTO</option>
+											<option value="DISPENSA">DISPENSA</option>
+											<option value="INEXIGIBILIDADE">INEXIGIBILIDADE</option>
+											<option value="LICITAÇÃO">LICITAÇÃO</option>
+										</select>
+									</div>
+									<div class="form-group col-md-2">
+										<label for="valorTotal">Valor Total:</label>
+										<div class="input-group">
+											<div class="input-group-addon">$</div>
+											<input class="form-control" type="text" name="valorTotal" id="valorTotal"
+												readonly>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<div class="col-md-2">
+										<button type="button" class="waves-effect waves-light btn btn-info"
+											id="addRateio" onclick="addRateioz();">Inserir Dotação Orçamentária
+											<b>+</b></button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table id="dadosrateio" tablename="dadosrateio" class="table table-hover"
+										noaddbutton="true" nodeletebutton="true">
+										<thead>
+											<tr>
+												<td></td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<span class="fluig-style-guide fs-display-block fs-md-space">
+														<i type="button"
+															class="fluigicon fluigicon-trash fluigicon-md delRateio"
+															id="deleta_rateio" name="deleta_rateio"
+															onclick="Javascript:fnCustomDelete(this);"
+															style="cursor:pointer">
+														</i>
+													</span>
+												</td>
+												<td>
+													<div class="form-group row">
+														<div class="col-md-4">
+															<label for="slc_FonteRecursos">Fonte de Recurso:</label>
+															<select class="form-control" name="slc_FonteRecursos"
+																id="slc_FonteRecursos">
+																<option value="0" selected disabled>Selecione</option>
+																<option value="CSO">Contribuição Social Ordinária - CSO
+																</option>
+																<option value="CSN">Contribuição Social Nacional - CSN
+																</option>
+															</select>
+														</div>
+													</div>
+													<div class="form-group row">
+														<div class="col-md-9" style="display: none;">
+															<label for="txt_projeto">Projeto<span
+																	class="Obrigatorio"><strong>*</strong></span>:</label>
+															<input type="zoom" id="txt_projeto" name="txt_projeto"
+																data-zoom="{
+																			'displayKey':'NOME',
+																			'datasetId':'dsprojeto',
+																			'maximumSelectionLength':'1',
+																			'placeholder':'Escolha o projeto',
+																			'fields':[
+																			{
+																				'field':'CODCCUSTO',
+																				'label':'CODIGO'
+																			},{
+																					'field':'NOME',
+																					'label':'NOME',
+																					'standard':'true'
+																			}
+																			]
+																			}">
+
+														</div>
+														<div id="projetov" class="col-md-9 projetov">
+														</div>
+														<input type="hidden" name="txt_codprojeto" id="txt_codprojeto">
+														<div class="col-md-2">
+															<label for="txt_saldo">Saldo:</label>
+															<div class="input-group">
+																<input class="form-control mm" type="text"
+																	name="txt_saldo" id="txt_saldo" readonly>
+																<span class="input-group-addon">$</span>
+															</div>
+														</div>
+													</div>
+													<div class="form-group row">
+														<div class="col-md-9" style="display: none;">
+															<label for="txt_acao">Ação<span
+																	class="Obrigatorio"><strong>*</strong></span>:</label>
+															<input type="zoom" class="form-control" id="txt_acao"
+																name="txt_acao" data-zoom="{
+																			'displayKey':'NOME',
+																			'datasetId':'dsacao',
+																			'maximumSelectionLength':'1',
+																			'placeholder':'Escolha a ação',
+																			'fields':[
+																			{
+																				'field':'CODCCUSTO',
+																				'label':'CODIGO',
+																				'search':'true'
+																				
+																			},{
+																					'field':'NOME',
+																					'label':'NOME',
+																					'search':'true',
+																					'standard':'true'
+																			}
+																			]
+																			}">
+
+														</div>
+														<div id="acaov" class="col-md-9 acaov"></div>
+														<input type="hidden" name="txt_codacao" id="txt_codacao">
+														<div class="col-md-2">
+															<label for="txt_valorUtil">Valor utilizado<span
+																	class="Obrigatorio"><strong>*</strong></span>:</label>
+															<input type="text" class="form-control" name="txt_valorUtil"
+																id="txt_valorUtil"
+																onchange="formatarMoeda(this);validateValor()"
+																onblur="somarValores();">
+
+														</div>
+													</div>
+													<div class="form-group row">
+														<div class="col-md-9" style="display: none;">
+															<label for="txt_recursos">Unidade<span
+																	class="Obrigatorio"><strong>*</strong></span>:</label>
+															<input type="zoom" class="form-control" id="txt_recursos"
+																name="txt_recursos" data-zoom="{
+																			'displayKey':'NOME',
+																			'datasetId':'dsunidade',
+																			'maximumSelectionLength':'1',
+																			'placeholder':'Escolha a unidade',
+																			'fields':[
+																			{
+																				'field':'CODCCUSTO',
+																				'label':'CODIGO'
+																			},{
+																					'field':'NOME',
+																					'label':'NOME',
+																					'standard':'true'
+																			}
+																			]
+																			}">
+
+														</div>
+														<div id="unidadev" class="col-md-9 unidadev">
+														</div>
+														<input type="hidden" name="txt_codrecurso" id="txt_codrecurso">
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panel-info" id="Portaria">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="flaticon flaticon-tests-central icon-lg" aria-hidden="true"></i>
+					Portaria</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group row">
+					<div class="col-md-3">
+						<label for="motivo">Motivo <span class="Obrigatorio"><strong>*</strong></span></label>
+						<select class="form-control" name="motivo" id="motivo"></select>
+					</div>
+					<div class="col-md-1">
+						<label for="money">Remuneração? <span class="Obrigatorio"><strong>*</strong></span></label>
+						<select class="form-control" name="money" id="money">
+							<option value="nao">Não</option>
+							<option value="sim">Sim</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-1" style="padding-right: 0px">
+						<label for="dh_inicio">Início <span class="Obrigatorio"><strong>*</strong></span></label>
+						<div class="input-group date">
+							<input type="text" class="form-control" name="dh_inicio" id="dh_inicio">
+							<span class="input-group-addon"><span class="flaticon flaticon-today "></span></span>
+						</div>
+					</div>
+					<div class="col-md-1" style="padding-right: 0px">
+						<label for="dh_fim">Término <span class="Obrigatorio"><strong>*</strong></span></label>
+						<div class="input-group date">
+							<input type="text" class="form-control" name="dh_fim" id="dh_fim">
+							<span class="input-group-addon"><span class="flaticon flaticon-event l"></span></span>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<label for="selcsubstituto">Terá substituto? </label>
+						<select class="form-control" name="selcsubstituto" id="selcsubstituto">
+							<option value="nao">Não</option>
+							<option value="sim">Sim</option>
+						</select>
+					</div>
+				</div>
+				<div id="substituto">
+					<div class="form-group row">
+						<div class="col-md-3">
+							<label for="cmb_Gerente">Gerente / Diretor <span
+									class="Obrigatorio"><strong>*</strong></span></label>
+							<select name="cmb_Gerente" id="cmb_Gerente" dataset="dsc_Unidades" datasetkey="Matricula"
+								datasetvalue="NomeGerente" class="form-control">
+							</select>
+						</div>
+						<div class="col-md-1">
+							<label for="matriculaGerente">Matricula</label>
+							<input type="text" class="form-control" name="matriculaGerente" id="matriculaGerente"
+								readonly>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-3">
+							<div id="input1">
+							</div>
+						</div>
+						<div class="col-md-1">
+							<label for="matriculaSubstituto">Matricula </label>
+							<input type="text" name="matriculaSubstituto" id="matriculaSubstituto" class="form-control"
+								readonly>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panel-info" id="Capacidade">
+			<div class="panel-heading">
+				<h5 class="panel-title"><i class="flaticon flaticon-card-user icon-lg"></i> Atestado de Capacidade
+					Técnica</h5>
+			</div>
+			<div class="panel-body">
+				<div class="form-group row">
+					<div class="col-md-1">
+						<label for="nu_contrato">NÂ° Contrato: <span
+								class="Obrigatorio"><strong>*</strong></span></label>
+						<input type="text" class="form-control" name="nu_contrato" id="nu_contrato">
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-4" id="z1">
+						<div class="form-group">
+							<label for="txt_Favorecido">Razão Social: <span
+									class="Obrigatorio"><strong>*</strong></span></label>
+							<input type="zoom" id="txt_Favorecido" name="txt_Favorecido" data-zoom="{
+									'displayKey':				'NOME',
+									'datasetId':				'dsc_Favorecido',
+									'maximumSelectionLength':	'1',
+									'placeholder':				'Escolha o Favorecido',
+									'fields':[
+									{
+										'field':				'NOME',
+										'label':				'RAZAO SOCIAL'
+									}
+									]
+									}">
+						</div>
+					</div>
+					<div class="col-md-4" id="z2">
+						<div class="form-group">
+							<label for="txt_CNPJ_CPF">CNPJ/CPF : <span
+									class="Obrigatorio"><strong>*</strong></span></label>
+							<input type="zoom" id="txt_CNPJ_CPF" name="txt_CNPJ_CPF" data-zoom="{
+									'displayKey':				'CGCCFO',
+									'datasetId':				'dsc_Favorecido',
+									'maximumSelectionLength':	'1',
+									'placeholder':				'Escolha o Favorecido',
+									'fields':[
+									{
+										'field':				'CGCCFO',
+										'label':				'CGCCFO'
+									}
+									]
+									}">
+						</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-md-3">
+						<label for="endereco">Endereço da Empresa: <span
+								class="Obrigatorio"><strong>*</strong></span></label>
+						<input type="text" name="endereco" id="endereco" class="form-control">
+					</div>
+					<div class="col-md-3">
+						<label for="email">E-mail da Empresa: <span
+								class="Obrigatorio"><strong>*</strong></span></label>
+						<input type="text" name="email" id="email" placeholder="ex: exemplo@exemplo.com.br"
+							class="form-control">
+					</div>
+					<div class="col-md-2">
+						<label for="telefone">Telefone da Empresa: <span
+								class="Obrigatorio"><strong>*</strong></span></label>
+						<input type="text" name="telefone" id="telefone" onkeydown="return mascaraTelefone(event)"
+							placeholder="ex: (99)99999-9999" class="form-control">
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="panel panel-info" id="Resolucao">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="flaticon flaticon-gavel icon-lg"></i> Resolução AJUR</h3>
+			</div>
+			<div class="panel-body">
+				<div class="form-group row">
+					<div class="col-md-4">
+						<div class="panel panel-body">
+							<label><input type="checkbox" name="novaSolicitacao" id="novaSolicitacao"> Será necessario
+								Criar uma nova solicitação a partir desta</label>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<label for="resolucaoAJUR">Resolução: <span
+								class="Obrigatorio"><strong>*</strong></span></label>
+						<textarea rows="3" name="resolucaoAJUR" id="resolucaoAJUR" class="form-control"></textarea>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+
+			function email(atv) {
+				// atv = atividade
+				console.log(' -------------------*** ** ** * * * 1')
+				// gestorDesc = document.getElementById('gestorResp').value
+				// console.log(gestorDesc)
+				solictDesc = document.getElementById('cmb_NomeSolicitante').value
+				console.log(solictDesc)
+				solIn = window.parent.ECM.workflowView.processDefinition.processInstanceId;
+				console.log(solIn)
+				// LinKiM = 'https://myweb.am.sebrae.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID=' + solIn;
+				LinKiM = 'https://mywebhm.am.sebrae.com.br/portal/p/1/pageworkflowview?app_ecm_workflowview_detailsProcessInstanceID=' + solIn;
+				console.log(' -------------------*** ** ** * * * 2')
+				dsMail = DatasetFactory.getDataset("colleague", null, null, null).values;
+				eMailIn = 0;
+				// nameGest = 0;
+				nameSoli = 0;
+				// for (i = 0; i < dsMail.length; i++) {
+				// 	if (dsMail[i]['colleaguePK.colleagueId'] == gestorDesc) {
+				// 		nameGest = dsMail[i]['colleagueName'];
+				// 	}
+				// }
+				for (i = 0; i < dsMail.length; i++) {
+					if (dsMail[i]['colleaguePK.colleagueId'] == solictDesc) {
+						eMailIn = dsMail[i]['mail'];
+						nameSoli = dsMail[i]['colleagueName'];
+					}
+				}
+				console.log(' -------------------*** ** ** * * * 3')
+				// console.log(nameGest)
+				console.log(eMailIn)
+				console.log(nameSoli)
+				var settings = {
+					"url": "https://mywebhm.am.sebrae.com.br/api/public/alert/customEmailSender",
+					"method": "POST",
+					"timeout": 20000,
+					"headers": {
+						"Content-Type": "application/json"
+					},
+					"data": JSON.stringify({
+						"to": eMailIn,
+						"from": "intranet.am@am.sebrae.com.br",
+						"subject": "Solicitação de Serviços UAJUR - MYWEB",
+						"templateId": "novaSolicitação",
+						"dialectId": "pt_BR",
+						"param": {
+							"GESTOR": nameSoli,
+							"NUMERO": solIn,
+							"LINK": LinKiM
+						}
+					}),
+				};
+
+				$.ajax(settings).done(function (response) {
+					console.log(response);
+				});
+
+			}
+
+			var editor
+
+			var beforeSendValidate = function (numState, nextState) {
+				var erromsg = "";
+				var voto = document.getElementById("rating_numbers1").value;
+
+				console.log("-beforeSendValidate-");
+				console.log("numState: " + numState);
+				console.log("nextState: " + nextState);
+				console.log("value: " + voto);
+				// console.log("check nova solicitaçao: "+ document.getElementById("novaSolicitacao").checked)
+				// console.log("check nova solicitaçao _ : "+ document.getElementById("_novaSolicitacao").checked)
+				console.log("validate button")
+				//document.getElementById("detalhes").value = editor.getData()
+				console.log(document.getElementById("detalhes").value)
+				console.log("****************************************************************************************************************************************************")
+				//console.log(editor.getData())
+
+				if (numState == 0 || numState == 4 || numState == 36 || numState == 47) {
+					console.log("aaaaaaaaaaaaaaaa")
+					//console.log(editor.getData())
+				}
+
+				if (numState == 18 && nextState == 103) {
+					var erromsg = "";
+					if (voto == null || voto == '0') {
+						erromsg += "Favor expressar grau de Satisfação da Solicitação!\n"
+					}
+					else if (document.getElementById("novaSolicitacao").checked || document.getElementById("_novaSolicitacao").checked) {
+						email()
+					}
+				}
+
+
+				if (erromsg.trim().isEmpty() == false) { throw "\n" + erromsg; }
+			}
+
+			function editorTexto() {
+				// editor.setData("")
+				var Now_state = window.parent.ECM.workflowView.sequence
+				var visualizacao = window.parent.ECM.workflowView.stateDescription
+				var campoDetalhes = document.getElementById("detalhes")
+
+
+				if (visualizacao == 'Detalhes da Solicitação') {
+					editor = FLUIGC.richeditor('detalhes');
+					editor.setData(document.getElementById("detalhes").textContent)
+					document.getElementsByClassName('cke_editable cke_editable_themed cke_contents_ltr cke_show_borders')[0].contentEditable = false
+				}
+				else {
+					if (Now_state == 18 || Now_state == 13 || Now_state == 14 || Now_state == 15 || Now_state == 16 || Now_state == 51 || Now_state == 55 || Now_state == 54 || Now_state == 5 || Now_state == 55 || Now_state == 181 || Now_state == 107) {
+						editor = FLUIGC.richeditor('_detalhes');
+						editor.setData(document.getElementById("detalhes").value)
+					}
+					else if (Now_state == 0 || Now_state == 4 || Now_state == 36 || Now_state == 47) {
+						editor = FLUIGC.richeditor('detalhes');
+						editor.setData(document.getElementById("detalhes").value)
+						var ab = setInterval(a, 1000);
+						function a() {
+							document.getElementById("detalhes").value = editor.getData()
+						}
+					}
+				}
+
+			}
+			window.addEventListener('load', editorTexto)
+
+		</script>
+		<div class="form-group row">
+			<div class="col-md-10" style="text-align:left;background-color: rgb(114, 47, 55);">
+				<img src="LOGO_NTIC.png" title="Logo do ATIC REAL OFFICIAL" width="80" height="37">
+			</div>
+			<div class="col-md-2" style="text-align:right;background-color: rgb(114, 47, 55);">
+				<img src="sebrae-branco.png" title="Logo do SEBRAE" width="80" height="37">
+			</div>
+		</div>
+	</form>
+</body>
+<script>
+	String.prototype.isEmpty = function () {
+		return (!this || 0 === this.length);
+	};
+
+	var ratingnumbers1 = FLUIGC.stars(".rating-numbers1", {
+		stars: 5,
+		value: 0,
+		text: ['NS/NR', 'Não Atendeu', 'Atendeu parcialmente', 'Atendeu', 'Superou as expectativas']
+	});
+
+	var pos = '0';
+	$('#rating_numbers1').val(pos);
+	if (ratingnumbers1.on("click", function (obj) {
+		pos = $(this).index();
+		var opt = ['1', '2', '3', '4', '5'];
+
+		$('#rating_numbers1').val(opt[pos]);
+
+	}));
+
+</script>
+<script type="text/javascript"> var calendario = FLUIGC.calendar('#dh_inicio');</script>
+<script type="text/javascript"> var calendario = FLUIGC.calendar('#dh_fim');</script>
+
+
+</html>
