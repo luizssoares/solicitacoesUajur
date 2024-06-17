@@ -28,7 +28,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Solicitacao UAJUR</processId>
-      <version>15</version>
+      <version>18</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>125814</formId>
@@ -786,6 +786,8 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Pool Papel</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Role&gt;AJUR_ANALISE&lt;/Role&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -1217,7 +1219,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>1</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>17</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1229,7 +1231,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>2</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>17</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1241,7 +1243,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>3</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>17</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1253,7 +1255,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>4</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>17</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1265,7 +1267,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>5</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>17</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1277,7 +1279,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>6</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>17</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1288,8 +1290,20 @@
       <conditionProcessStatePK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
+        <expressionOrder>7</expressionOrder>
+        <version>18</version>
+        <sequence>17</sequence>
+      </conditionProcessStatePK>
+      <condition></condition>
+      <destinationSequenceId>186</destinationSequenceId>
+      <conditionType>1</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_ajur</processId>
         <expressionOrder>1</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>48</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1301,7 +1315,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>2</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>48</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1313,7 +1327,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>3</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>48</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1325,7 +1339,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>4</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>48</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1337,7 +1351,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>5</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>48</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1349,7 +1363,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>6</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>48</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1361,7 +1375,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>7</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>48</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1372,8 +1386,20 @@
       <conditionProcessStatePK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
+        <expressionOrder>8</expressionOrder>
+        <version>18</version>
+        <sequence>48</sequence>
+      </conditionProcessStatePK>
+      <condition></condition>
+      <destinationSequenceId>5</destinationSequenceId>
+      <conditionType>1</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_ajur</processId>
         <expressionOrder>1</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>103</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1387,7 +1413,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>2</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>103</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1399,7 +1425,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>1</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>105</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1411,7 +1437,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>2</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>105</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1423,7 +1449,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>3</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>105</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1435,7 +1461,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>4</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>105</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1447,7 +1473,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>5</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>105</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -1459,7 +1485,7 @@
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
         <expressionOrder>6</expressionOrder>
-        <version>15</version>
+        <version>18</version>
         <sequence>105</sequence>
       </conditionProcessStatePK>
       <condition>false</condition>
@@ -2456,7 +2482,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>129</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2467,7 +2493,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>129</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2478,7 +2504,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>130</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2489,7 +2515,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>130</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2500,7 +2526,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>131</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2511,7 +2537,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>131</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2522,7 +2548,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>132</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2533,7 +2559,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>132</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2544,7 +2570,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>133</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2555,7 +2581,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>133</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2566,7 +2592,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>134</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2577,7 +2603,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>134</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2588,7 +2614,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>135</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2599,7 +2625,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>135</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2610,7 +2636,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>136</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2621,7 +2647,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>136</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2632,7 +2658,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>137</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2643,7 +2669,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>137</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2654,7 +2680,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>137</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -2665,7 +2691,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>137</linkSequence>
         <bendSequence>4</bendSequence>
       </processLinkBendPK>
@@ -2676,7 +2702,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>139</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2687,7 +2713,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>139</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2698,7 +2724,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>141</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2709,7 +2735,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>141</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2720,7 +2746,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>142</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2731,7 +2757,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>142</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2742,7 +2768,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>142</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -2753,7 +2779,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>143</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2764,7 +2790,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>143</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2775,7 +2801,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>144</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2786,7 +2812,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>144</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2797,7 +2823,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>145</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2808,7 +2834,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>145</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2819,7 +2845,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>146</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2830,7 +2856,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>146</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2841,7 +2867,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>147</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2852,7 +2878,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>147</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2863,7 +2889,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>148</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2874,7 +2900,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>148</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2885,7 +2911,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>149</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2896,7 +2922,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>149</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2907,7 +2933,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>150</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2918,7 +2944,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>150</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2929,7 +2955,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>151</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2940,7 +2966,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>151</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2951,7 +2977,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>152</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2962,7 +2988,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>152</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2973,7 +2999,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>153</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -2984,7 +3010,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>153</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -2995,7 +3021,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>157</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -3006,7 +3032,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>158</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -3017,7 +3043,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>160</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -3028,7 +3054,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>174</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -3039,7 +3065,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>174</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -3050,7 +3076,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>177</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -3061,7 +3087,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>177</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -3072,7 +3098,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>178</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -3083,7 +3109,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>180</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -3094,7 +3120,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>180</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -3105,7 +3131,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>180</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -3116,7 +3142,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>182</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -3127,7 +3153,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>182</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -3138,7 +3164,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>182</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -3149,7 +3175,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>182</linkSequence>
         <bendSequence>4</bendSequence>
       </processLinkBendPK>
@@ -3160,7 +3186,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>183</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -3171,7 +3197,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>185</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -3182,7 +3208,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>185</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -3193,7 +3219,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>187</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -3204,7 +3230,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>187</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -3215,7 +3241,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>187</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -3226,7 +3252,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>188</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -3237,7 +3263,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>188</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -3248,7 +3274,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>189</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -3259,7 +3285,7 @@
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>solicitacao_ajur</processId>
-        <version>15</version>
+        <version>18</version>
         <linkSequence>189</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -3528,7 +3554,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>solicitacao_ajur</processId>
-      <processVersion>15</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>5</stateSequence>
       <appKey>approval</appKey>
       <appField>title</appField>
@@ -3538,7 +3564,7 @@
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>solicitacao_ajur</processId>
-      <processVersion>15</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>5</stateSequence>
       <appKey>approval</appKey>
       <appField>description</appField>
@@ -3549,7 +3575,7 @@ Descrição: @[form:detalhes]</description>
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>solicitacao_ajur</processId>
-      <processVersion>15</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>5</stateSequence>
       <appKey>approval</appKey>
       <appField>highlight</appField>
@@ -3559,7 +3585,7 @@ Descrição: @[form:detalhes]</description>
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>solicitacao_ajur</processId>
-      <processVersion>15</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>5</stateSequence>
       <appKey>approval</appKey>
       <appField>approve</appField>
@@ -3569,7 +3595,7 @@ Descrição: @[form:detalhes]</description>
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>solicitacao_ajur</processId>
-      <processVersion>15</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>5</stateSequence>
       <appKey>approval</appKey>
       <appField>reject</appField>
@@ -3579,7 +3605,7 @@ Descrição: @[form:detalhes]</description>
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>solicitacao_ajur</processId>
-      <processVersion>15</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>55</stateSequence>
       <appKey>approval</appKey>
       <appField>description</appField>
@@ -3591,7 +3617,7 @@ Descrição: @[form:detalhes]&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>solicitacao_ajur</processId>
-      <processVersion>15</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>55</stateSequence>
       <appKey>approval</appKey>
       <appField>highlight</appField>
@@ -3601,7 +3627,7 @@ Descrição: @[form:detalhes]&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>solicitacao_ajur</processId>
-      <processVersion>15</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>55</stateSequence>
       <appKey>approval</appKey>
       <appField>approve</appField>
@@ -3611,7 +3637,7 @@ Descrição: @[form:detalhes]&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>solicitacao_ajur</processId>
-      <processVersion>15</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>107</stateSequence>
       <appKey>approval</appKey>
       <appField>description</appField>
@@ -3623,7 +3649,7 @@ Descrição: @[form:detalhes]&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>solicitacao_ajur</processId>
-      <processVersion>15</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>107</stateSequence>
       <appKey>approval</appKey>
       <appField>highlight</appField>
@@ -3633,7 +3659,7 @@ Descrição: @[form:detalhes]&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>solicitacao_ajur</processId>
-      <processVersion>15</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>107</stateSequence>
       <appKey>approval</appKey>
       <appField>approve</appField>
@@ -3643,7 +3669,7 @@ Descrição: @[form:detalhes]&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>solicitacao_ajur</processId>
-      <processVersion>15</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>181</stateSequence>
       <appKey>approval</appKey>
       <appField>description</appField>
@@ -3655,7 +3681,7 @@ Descrição: @[form:detalhes]&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>solicitacao_ajur</processId>
-      <processVersion>15</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>181</stateSequence>
       <appKey>approval</appKey>
       <appField>highlight</appField>
@@ -3665,7 +3691,7 @@ Descrição: @[form:detalhes]&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>solicitacao_ajur</processId>
-      <processVersion>15</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>181</stateSequence>
       <appKey>approval</appKey>
       <appField>approve</appField>
@@ -3677,7 +3703,7 @@ Descrição: @[form:detalhes]&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>solicitacao_ajur</processId>
-      <processVersion>15</processVersion>
+      <processVersion>18</processVersion>
       <stateSequence>4</stateSequence>
       <operator>2</operator>
       <amount>0</amount>
@@ -3737,6 +3763,15 @@ Descrição: @[form:detalhes]&#xd;
       <ruleOrder>1</ruleOrder>
       <field>tp_solicitacao</field>
       <value>Resolução</value>
+      <operator>1</operator>
+      <valueType>1</valueType>
+    </ConditionProcessAutomaticRules>
+    <ConditionProcessAutomaticRules>
+      <sequence>17</sequence>
+      <expressionOrder>7</expressionOrder>
+      <ruleOrder>1</ruleOrder>
+      <field>tp_solicitacao</field>
+      <value>Apostilamento</value>
       <operator>1</operator>
       <valueType>1</valueType>
     </ConditionProcessAutomaticRules>
@@ -3809,6 +3844,15 @@ Descrição: @[form:detalhes]&#xd;
       <ruleOrder>1</ruleOrder>
       <field>tp_solicitacao</field>
       <value>Resolução</value>
+      <operator>1</operator>
+      <valueType>1</valueType>
+    </ConditionProcessAutomaticRules>
+    <ConditionProcessAutomaticRules>
+      <sequence>48</sequence>
+      <expressionOrder>8</expressionOrder>
+      <ruleOrder>1</ruleOrder>
+      <field>tp_solicitacao</field>
+      <value>Apostilamento</value>
       <operator>1</operator>
       <valueType>1</valueType>
     </ConditionProcessAutomaticRules>

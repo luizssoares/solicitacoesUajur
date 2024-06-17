@@ -30,8 +30,8 @@ function colors() {
     const Sborder = 'border-color: #722F37;'
 
 
-    var S1 = document.querySelectorAll(".fluig-style-guide .panel-info")
-    var S2 = document.querySelectorAll(".fluig-style-guide .panel-info>.panel-heading")
+    var S1 = document.querySelectorAll(".fluig-style-guide .panel-default")
+    var S2 = document.querySelectorAll(".fluig-style-guide .panel-default>.panel-heading")
 
     //.fluig-style-guide .panel-info>.panel-heading
 
@@ -128,9 +128,7 @@ function tp_serviço() {
     //document.getElementById('apoio_servico').style.display = 'none';
     //document.getElementById('apoio_evento').style.display = 'none';
 
-    var visualizacao = window.parent.ECM.workflowView.stateDescription
-    // console.log(visualizacao)
-    if (visualizacao == 'Detalhes da Solicitação') {
+    if (document.getElementById('tp_solicitacao').value == null) {
         tp = document.getElementById("tp_solicitacao").innerText
     } else {
         tp = document.getElementById('tp_solicitacao').value
@@ -162,16 +160,6 @@ function tp_serviço() {
         verificSubs(subs)
     })
 
-    if (visualizacao != 'Início' || visualizacao != 'Ajuste' || visualizacao != 'Correção/Ajuste') {
-        document.getElementById('ad').style.display = 'none';
-        document.getElementById('pt').style.display = 'none';
-        document.getElementById('rs').style.display = 'none';
-        document.getElementById('act').style.display = 'none';
-        document.getElementById('pj').style.display = 'none';
-        document.getElementById('ot').style.display = 'none';
-        document.getElementById('td').style.display = 'none';
-        document.getElementById('aviso').style.display = 'block';
-    }
 
 }
 window.addEventListener('load', tp_serviço)
@@ -189,7 +177,8 @@ function verificSubs(subs) {
 
 function secFunc(tipo) {
     if (tipo == 'Aditivo de Contrato') {
-        // document.getElementById('num_direx_').style.display = 'none';
+        document.getElementById('num_direx').style.display = 'none';
+        document.getElementById('dh_direxResolucao').style.display = 'none';
 
         document.getElementById('divassunto').style.display = 'block';
         document.getElementById('tipo_portaria').style.display = 'none';
@@ -197,6 +186,7 @@ function secFunc(tipo) {
         document.getElementById('Aditivo').style.display = 'block'
         document.getElementById('Portaria').style.display = 'none';
         document.getElementById('Capacidade').style.display = 'none';
+        document.getElementById('apostilamento').style.display = 'none';
 
         document.getElementById('ad').style.display = 'block';
         document.getElementById('pt').style.display = 'none';
@@ -205,10 +195,12 @@ function secFunc(tipo) {
         document.getElementById('pj').style.display = 'none';
         document.getElementById('ot').style.display = 'none';
         document.getElementById('td').style.display = 'none';
+        document.getElementById('cardApost').style.display = 'none';
         somarValores()
     }
     else if (tipo == 'Portaria') {
-        document.getElementById('num_direx_').style.display = 'none';
+        document.getElementById('num_direx').style.display = 'none';
+        document.getElementById('dh_direxResolucao').style.display = 'none';
 
         document.getElementById('divassunto').style.display = 'none';
         document.getElementById('tipo_portaria').style.display = 'block';
@@ -216,6 +208,7 @@ function secFunc(tipo) {
         document.getElementById('Portaria').style.display = 'block'
         document.getElementById('Aditivo').style.display = 'none'
         document.getElementById('Capacidade').style.display = 'none';
+        document.getElementById('apostilamento').style.display = 'none';
 
         document.getElementById('ad').style.display = 'none';
         document.getElementById('pt').style.display = 'block';
@@ -224,9 +217,11 @@ function secFunc(tipo) {
         document.getElementById('pj').style.display = 'none';
         document.getElementById('ot').style.display = 'none';
         document.getElementById('td').style.display = 'none';
+        document.getElementById('cardApost').style.display = 'none';
     }
     else if (tipo == 'Atestado de Capacidade Técnica') {
-        document.getElementById('num_direx_').style.display = 'none';
+        document.getElementById('num_direx').style.display = 'none';
+        document.getElementById('dh_direxResolucao').style.display = 'none';
 
         document.getElementById('divassunto').style.display = 'block';
         document.getElementById('tipo_portaria').style.display = 'none';
@@ -234,6 +229,7 @@ function secFunc(tipo) {
         document.getElementById('Capacidade').style.display = 'block'
         document.getElementById('Aditivo').style.display = 'none'
         document.getElementById('Portaria').style.display = 'none';
+        document.getElementById('apostilamento').style.display = 'none';
 
         document.getElementById('ad').style.display = 'none';
         document.getElementById('pt').style.display = 'none';
@@ -242,9 +238,11 @@ function secFunc(tipo) {
         document.getElementById('pj').style.display = 'none';
         document.getElementById('ot').style.display = 'none';
         document.getElementById('td').style.display = 'none';
+        document.getElementById('cardApost').style.display = 'none';
     }
     else if (tipo == 'Resolução') {
-        document.getElementById('num_direx_').style.display = 'block';
+        document.getElementById('num_direx').style.display = 'block';
+        document.getElementById('dh_direxResolucao').style.display = 'block';
 
         document.getElementById('divassunto').style.display = 'block';
         document.getElementById('tipo_portaria').style.display = 'none';
@@ -252,6 +250,7 @@ function secFunc(tipo) {
         document.getElementById('Capacidade').style.display = 'none';
         document.getElementById('Aditivo').style.display = 'none'
         document.getElementById('Portaria').style.display = 'none'
+        document.getElementById('apostilamento').style.display = 'none';
 
         document.getElementById('ad').style.display = 'none';
         document.getElementById('pt').style.display = 'none';
@@ -260,9 +259,11 @@ function secFunc(tipo) {
         document.getElementById('pj').style.display = 'none';
         document.getElementById('ot').style.display = 'none';
         document.getElementById('td').style.display = 'none';
+        document.getElementById('cardApost').style.display = 'none';
     }
     else if (tipo == 'Parecer Jurídico') {
-        document.getElementById('num_direx_').style.display = 'none';
+        document.getElementById('num_direx').style.display = 'none';
+        document.getElementById('dh_direxResolucao').style.display = 'none';
 
         document.getElementById('divassunto').style.display = 'block';
         document.getElementById('tipo_portaria').style.display = 'none';
@@ -270,6 +271,7 @@ function secFunc(tipo) {
         document.getElementById('Portaria').style.display = 'none';
         document.getElementById('Capacidade').style.display = 'none';
         document.getElementById('Aditivo').style.display = 'none';
+        document.getElementById('apostilamento').style.display = 'none';
 
         document.getElementById('ad').style.display = 'none';
         document.getElementById('pt').style.display = 'none';
@@ -278,9 +280,11 @@ function secFunc(tipo) {
         document.getElementById('pj').style.display = 'block';
         document.getElementById('ot').style.display = 'none';
         document.getElementById('td').style.display = 'none';
+        document.getElementById('cardApost').style.display = 'none';
     }
     else if (tipo == 'Outros') {
-        document.getElementById('num_direx_').style.display = 'none';
+        document.getElementById('num_direx').style.display = 'none';
+        document.getElementById('dh_direxResolucao').style.display = 'none';
 
         document.getElementById('divassunto').style.display = 'block';
         document.getElementById('tipo_portaria').style.display = 'none';
@@ -288,6 +292,7 @@ function secFunc(tipo) {
         document.getElementById('Portaria').style.display = 'none';
         document.getElementById('Capacidade').style.display = 'none';
         document.getElementById('Aditivo').style.display = 'none';
+        document.getElementById('apostilamento').style.display = 'none';
 
         document.getElementById('ad').style.display = 'none';
         document.getElementById('pt').style.display = 'none';
@@ -296,13 +301,14 @@ function secFunc(tipo) {
         document.getElementById('pj').style.display = 'none';
         document.getElementById('ot').style.display = 'block';
         document.getElementById('td').style.display = 'none';
+        document.getElementById('cardApost').style.display = 'none';
     }
-    else {
-        document.getElementById('num_direx_').style.display = 'none';
+    else if (tipo == 'Apostilamento') {
+        document.getElementById('num_direx').style.display = 'none';
+        document.getElementById('dh_direxResolucao').style.display = 'none';
 
-        document.getElementById('divassunto').style.display = 'block';
         document.getElementById('tipo_portaria').style.display = 'none';
-
+        document.getElementById('apostilamento').style.display = 'block';
         document.getElementById('Portaria').style.display = 'none';
         document.getElementById('Capacidade').style.display = 'none';
         document.getElementById('Aditivo').style.display = 'none';
@@ -313,6 +319,29 @@ function secFunc(tipo) {
         document.getElementById('act').style.display = 'none';
         document.getElementById('pj').style.display = 'none';
         document.getElementById('ot').style.display = 'none';
+        document.getElementById('td').style.display = 'none';
+        document.getElementById('cardApost').style.display = 'block';
+
+    }
+    else {
+        document.getElementById('num_direx').style.display = 'none';
+        document.getElementById('dh_direxResolucao').style.display = 'none';
+
+        document.getElementById('divassunto').style.display = 'block';
+        document.getElementById('tipo_portaria').style.display = 'none';
+
+        document.getElementById('Portaria').style.display = 'none';
+        document.getElementById('Capacidade').style.display = 'none';
+        document.getElementById('Aditivo').style.display = 'none';
+        document.getElementById('apostilamento').style.display = 'none';
+
+        document.getElementById('ad').style.display = 'none';
+        document.getElementById('pt').style.display = 'none';
+        document.getElementById('rs').style.display = 'none';
+        document.getElementById('act').style.display = 'none';
+        document.getElementById('pj').style.display = 'none';
+        document.getElementById('ot').style.display = 'none';
+        document.getElementById('cardApost').style.display = 'none';
         document.getElementById('td').style.display = 'block';
     }
 }
@@ -332,7 +361,7 @@ function getRow() {
 /***********LIMPEZA DE PAINEL******************/
 
 function limpar() {
-    // console.log("LSJGLDFGHDÇGJDLGJDGÇD LIMPANDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+    //console.log("LSJGLDFGHDÇGJDLGJDGÇD LIMPANDOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
     fields = ["num_contrato", "nu_contrato", "num_direx", "txt_projeto", "txt_acao", "txt_codacao", "txt_valorUtil", "txt_recursos", "motivo", "dh_inicio", "dh_fim", "cmb_Substituto", "telefone", "email", "endereco", 'matriculaGerente', 'matriculaSubstituto']
     for (var i = 0; i < fields.length; i++) {
         // console.log(fields[i])
@@ -458,4 +487,4 @@ function verificaResolucao() {
     }
 
 }
-window.addEventListener('load', verificaResolucao)
+window.addEventListener('load', verificaResolucao)        

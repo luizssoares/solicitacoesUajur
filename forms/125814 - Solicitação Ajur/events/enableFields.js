@@ -11,14 +11,14 @@ function enableFields(form){
 		fields = ['cm_star-empty','cm_star-1','cm_star-2','cm_star-3','cm_star-4','cm_star-4','cm_star-5','comentario']
 		enableFieldsFromList(form,fields)
     }
-	if(Now_state == 13 || Now_state == 14 || Now_state == 15 || Now_state == 16||Now_state==51||Now_state==55||Now_state==54){
+	if(Now_state == 13 || Now_state == 14 || Now_state == 15 || Now_state == 16||Now_state==51||Now_state==55||Now_state==54|| Now_state == 186){
         disableAllFields(form);
 		fields = ['novaSolicitacao','resolucaoAJUR','cm_star-empty','cm_star-1','cm_star-2','cm_star-3','cm_star-4','cm_star-4','cm_star-5','comentario']
 		enableFieldsFromList(form,fields)
 	}
 	if(Now_state == 18){
         disableAllFields(form);
-		fields = ['cm_star-empty','cm_star-1','cm_star-2','cm_star-3','cm_star-4','cm_star-4','cm_star-5','comentario']
+		fields = ['cm_star-empty','cm_star-1','cm_star-2','cm_star-3','cm_star-4','cm_star-4','cm_star-5','comentario', 'novaSolicitacao']
 		enableFieldsFromList(form,fields)
 	}
 }
